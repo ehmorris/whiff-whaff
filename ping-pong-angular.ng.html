@@ -1,0 +1,11 @@
+<head>
+  <title>~</title>
+</head>
+
+<body ng-app="ping-pong" ng-controller="GamesCtrl">
+  <form ng-if="!currentGame" ng-submit="addGame(newGame)">
+    <input ng-model="newGame.name" type="text" minlength="10" placeholder="Enter a game name" />
+  </form>
+
+  <a ng-if="currentGame" href="sms://&body=http://localhost:3000/{{ currentGame.name }}">{{ currentGame.name }}</a>
+</body>
