@@ -1,11 +1,13 @@
 <head>
-  <title>~</title>
+  <title>ping</title>
 </head>
 
-<body ng-app="ping-pong" ng-controller="GamesCtrl">
-  <form ng-if="!currentGame" ng-submit="addGame(newGame)">
+<body ng-app="ping" ng-controller="GamesCtrl">
+  <form ng-submit="addGame(newGame)">
     <input ng-model="newGame.name" type="text" minlength="10" placeholder="Enter a game name" />
   </form>
 
-  <a ng-if="currentGame" href="sms://&body=http://localhost:3000/{{ currentGame.name }}">{{ currentGame.name }}</a>
+  <ul>
+    <li ng-repeat="game in games" ng-bind="game.name"></li>
+  </ul>
 </body>
