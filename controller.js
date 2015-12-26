@@ -10,10 +10,15 @@ if (Meteor.isClient) {
   angular.module('ping').config(function($urlRouterProvider, $stateProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 
-    $stateProvider.state('newGame', {
-      url: '/new-game',
-      template: '<new-game></new-game>'
-    });
+    $stateProvider
+      .state('newGame', {
+        url: '/new-game',
+        template: '<new-game></new-game>'
+      })
+      .state('game', {
+        url: '/game/:gameName',
+        template: '<game></game>'
+      });
 
     $urlRouterProvider.otherwise('/new-game');
   });
@@ -29,6 +34,16 @@ if (Meteor.isClient) {
           newGame.name = dasherize(newGame.name);
           $scope.games.push(newGame);
         };
+      }
+    };
+  });
+
+  angular.module('ping').directive('game', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'game.html',
+      controller: function($scope, $meteor, $stateParams) {
+        $scope.game = Games.findOne({name: $stateParams.gameName});
       }
     };
   });
