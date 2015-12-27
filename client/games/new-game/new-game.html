@@ -4,6 +4,11 @@
 
 <ul>
   <li ng-repeat="game in games">
-    <a ui-sref="game({gameName: game.name})" ng-bind="game.name"></a>
+    <a ui-sref="game({gameName: game.name})">
+      {{game.name}}
+      <span ng-if="game.teamOne.score">
+        ({{game.teamOne.score}}, {{game.teamTwo.score}})
+      </span>
+    </a>
   </li>
 </ul>

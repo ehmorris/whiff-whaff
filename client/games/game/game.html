@@ -1,1 +1,9 @@
-<p ng-bind="game.name"></p>
+<p>
+  {{game.name}}
+  <span ng-if="game.teamOne.score">
+    ({{game.teamOne.score}}, {{game.teamTwo.score}})
+  </span>
+</p>
+
+<button ng-click="addScore(1, 'teamOne')">+1 team one</button>
+<button ng-click="addScore(1, 'teamTwo')">+1 team two</button>
