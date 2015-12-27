@@ -3,7 +3,7 @@ angular.module('ping').directive('game', function() {
     restrict: 'E',
     templateUrl: 'client/games/game/game.html',
     controller: function($scope, $stateParams) {
-      $scope.game = Games.findOne({name: $stateParams.gameName});
+      $scope.game = Games.findOne({name: $stateParams.gameName}) || {name: $stateParams.gameName};
     }
   };
 });
