@@ -3,5 +3,7 @@
 </form>
 
 <ul>
-  <li ng-repeat="game in games" ng-bind="game.name"></li>
+  <li ng-repeat="game in games">
+    <a ui-sref="game({gameName: game.name})" ng-bind="game.name"></a>
+  </li>
 </ul>
