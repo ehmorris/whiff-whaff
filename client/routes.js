@@ -1,4 +1,4 @@
-angular.module('ping').config(function($urlRouterProvider, $stateProvider, $locationProvider) {
+angular.module('whiffWhaff').config(function($urlRouterProvider, $stateProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $stateProvider

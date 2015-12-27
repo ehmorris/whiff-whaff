@@ -1,1 +1,1 @@
-angular.module('ping', ['angular-meteor', 'ui.router']);
+angular.module('whiffWhaff', ['angular-meteor', 'ui.router']);

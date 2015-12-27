@@ -1,4 +1,4 @@
-angular.module('ping').directive('game', function() {
+angular.module('whiffWhaff').directive('game', function() {
   return {
     restrict: 'E',
     templateUrl: 'client/games/game/game.html',

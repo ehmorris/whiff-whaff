@@ -1,4 +1,4 @@
-angular.module('ping').directive('newGame', function() {
+angular.module('whiffWhaff').directive('newGame', function() {
   var dasherize = function(string) {
     return string.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
   };
