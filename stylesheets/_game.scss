@@ -42,3 +42,11 @@
 .game-score--flipped {
   @include transform(rotate(180deg));
 }
+
+.game-score--red {
+  color: #ea0000;
+}
+
+.game-score--blue {
+  color: #0000a5;
+}
