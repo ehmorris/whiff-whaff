@@ -3,6 +3,11 @@ angular.module('whiffWhaff').directive('newGame', function() {
     return string.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
   };
 
+  var defaultGame = {
+    teamOne: {score: 0},
+    teamTwo: {score: 0}
+  };
+
   return {
     restrict: 'E',
     templateUrl: 'client/games/new-game/new-game.html',
@@ -15,11 +20,6 @@ angular.module('whiffWhaff').directive('newGame', function() {
           return Games.find({});
         }
       });
-
-      var defaultGame = {
-        teamOne: {score: 0},
-        teamTwo: {score: 0}
-      };
 
       this.addGame = function(newGame) {
         newGame.name = dasherize(newGame.name);
