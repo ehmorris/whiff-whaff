@@ -12,6 +12,12 @@ angular.module('whiffWhaff').directive('game', function() {
         }
       });
 
+      this.gameUrl = window.location.href;
+
+      if (this.game.teamOne.score > 0 || this.game.teamTwo.score > 0) {
+        this.hideIntro = true;
+      }
+
       this.addScore = function(amount, team) {
         var update_object = {};
         update_object[team] = {score: this.game[team].score + amount};

@@ -1,0 +1,52 @@
+@import 'imports/keyframes';
+
+@mixin flex-center() {
+  @include align-items(center);
+  @include display(flex);
+  @include justify-content(center);
+  width: 100%;
+}
+
+.game {
+  @include user-select(none);
+}
+
+.game-title {
+  @include flex-center();
+  @include flex-direction(column);
+  background: rgba(0, 0, 0, .6);
+  color: #fff;
+  font-size: 8vw;
+  height: 100vh;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+
+.game-title-sms_link {
+  border: .15em solid #fff;
+  color: #fff;
+  margin: .5em 0;
+  padding: .25em .5em;
+  text-decoration: none;
+}
+
+.game-title-small {
+  font-weight: 400;
+  font-size: .5em;
+}
+
+.game-score {
+  @include animation(slide-from-left .5s);
+  @include flex-center();
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 35vh;
+  height: 50vh;
+  padding: 1rem;
+}
+
+.game-score--flipped {
+  @include animation(slide-from-right .5s .5s both);
+  @include transform(rotate(180deg));
+}
