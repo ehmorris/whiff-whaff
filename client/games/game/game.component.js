@@ -12,7 +12,7 @@ angular.module('whiffWhaff').directive('game', function() {
         }
       });
 
-      this.gameUrl = window.location.href;
+      this.gameUrl = window.location.origin + '/game/' + this.game.name;
 
       if (this.game.teamOne.score > 0 || this.game.teamTwo.score > 0) {
         this.hideIntro = true;
