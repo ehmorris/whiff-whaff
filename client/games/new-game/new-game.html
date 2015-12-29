@@ -1,14 +1,3 @@
-<form ng-submit="gamesCtrl.addGame(newGame)">
-  <input ng-model="newGame.name" type="text" minlength="10" placeholder="Enter a game name" />
+<form class="newGame" ng-submit="gamesCtrl.addGame(newGame)">
+  <input class="newGame-input" ng-model="newGame.name" type="text" minlength="10" placeholder="Enter a game name" autofocus />
 </form>
-
-<ul>
-  <li ng-repeat="game in gamesCtrl.games">
-    <a ui-sref="game({gameName: game.name})">
-      {{game.name}}
-      <span ng-if="game.teamOne.score">
-        ({{game.teamOne.score}}, {{game.teamTwo.score}})
-      </span>
-    </a>
-  </li>
-</ul>

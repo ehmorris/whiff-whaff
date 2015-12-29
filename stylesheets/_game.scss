@@ -1,11 +1,5 @@
 @import 'imports/keyframes';
-
-@mixin flex-center() {
-  @include align-items(center);
-  @include display(flex);
-  @include justify-content(center);
-  width: 100%;
-}
+@import 'imports/flex-mixins';
 
 .game {
   @include user-select(none);
@@ -16,14 +10,14 @@
   @include flex-direction(column);
   background: rgba(0, 0, 0, .6);
   color: #fff;
-  font-size: 8vw;
+  font-size: 7vw;
   height: 100vh;
   position: absolute;
   text-align: center;
   z-index: 1;
 }
 
-.game-title-sms_link {
+.game-title-smsLink {
   border: .15em solid #fff;
   color: #fff;
   margin: .5em 0;

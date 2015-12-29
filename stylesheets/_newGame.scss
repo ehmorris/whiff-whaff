@@ -1,0 +1,19 @@
+@import 'imports/flex-mixins';
+
+.newGame {
+  @include flex-center();
+  height: 100vh;
+}
+
+.newGame-input {
+  border: none;
+  font-size: 1rem;
+  font-size: 7vw;
+  padding: 0;
+  text-align: center;
+  width: 100vw;
+
+  &:focus {
+    outline: none;
+  }
+}

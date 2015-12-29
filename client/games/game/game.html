@@ -1,7 +1,7 @@
 <div class="game">
   <div class="game-title" ng-hide="gameCtrl.hideIntro" ng-click="gameCtrl.hideIntro = true">
     <div>{{gameCtrl.game.name}}</div>
-    <a class="game-title-sms_link" ng-click="$event.stopPropagation();" ng-href="sms://&body=:Game url:\n{{gameCtrl.gameUrl}}">text url to player 2</a>
+    <a class="game-title-smsLink" ng-click="$event.stopPropagation();" ng-href="sms://&body=:Game url:\n{{gameCtrl.gameUrl}}">text url to player 2</a>
     <div class="game-title-small">tap anywhere to begin</div>
   </div>
 
