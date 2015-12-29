@@ -2,19 +2,35 @@ angular.module('whiffWhaff').directive('game', function() {
   return {
     restrict: 'E',
     templateUrl: 'client/games/game/game.html',
-    controller: function($scope, $stateParams, $meteor) {
-      debugger;
-      $scope.game = $meteor.collection(Games.findOne({name: $stateParams.gameName}));
+    controllerAs: 'gameCtrl',
+    controller: function($scope, $stateParams, $reactive) {
+      $reactive(this).attach($scope);
 
-      $scope.addScore = function(amount, team) {
-        if (!$scope.game._id) {
-          $scope.game = $meteor.collection(Games.findOne({name: $scope.game.name}));
+      this.helpers({
+        game: function() {
+          return Games.findOne({name: $stateParams.gameName});
+        }
+      });
 
-          $scope.game.teamOne = {score: 0};
-          $scope.game.teamTwo = {score: 0};
+      this.addScore = function(amount, team) {
+        if (!this.game.teamOne) {
+          this.game = Games.findOne({name: this.game.name});
+
+          Games.update({ _id: this.game._id }, {
+            $set: {
+              teamOne: {score: 0},
+              teamTwo: {score: 0}
+            }
+          });
         }
 
-        $scope.game[team].score += amount;
+        var new_score = this.game[team].score + amount;
+        var update_object = {};
+        update_object[team] = {score: new_score};
+
+        Games.update({ _id: this.game._id }, {
+          $set: update_object
+        });
       };
     }
   };
