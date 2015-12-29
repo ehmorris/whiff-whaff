@@ -1,4 +1,4 @@
-angular.module('utils.autofocus').directive('autofocus', ['$timeout', function($timeout) {
+angular.module('whiffWhaff').directive('autofocus', ['$timeout', function($timeout) {
   return {
     restrict: 'A',
     link: function($scope, $element) {
