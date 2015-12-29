@@ -6,12 +6,19 @@ angular.module('whiffWhaff').directive('newGame', function() {
   return {
     restrict: 'E',
     templateUrl: 'client/games/new-game/new-game.html',
-    controller: function($scope, $state, $meteor) {
-      $scope.games = $meteor.collection(Games);
+    controllerAs: 'gamesCtrl',
+    controller: function($scope, $state, $reactive) {
+      $reactive(this).attach($scope);
 
-      $scope.addGame = function(newGame) {
+      this.helpers({
+        games: function() {
+          return Games.find({});
+        }
+      });
+
+      this.addGame = function(newGame) {
         newGame.name = dasherize(newGame.name);
-        $scope.games.push(newGame);
+        Games.insert(newGame);
         $state.go('game', {gameName: newGame.name});
       };
     }

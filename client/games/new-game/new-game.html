@@ -1,9 +1,9 @@
-<form ng-submit="addGame(newGame)">
+<form ng-submit="gamesCtrl.addGame(newGame)">
   <input ng-model="newGame.name" type="text" minlength="10" placeholder="Enter a game name" />
 </form>
 
 <ul>
-  <li ng-repeat="game in games">
+  <li ng-repeat="game in gamesCtrl.games">
     <a ui-sref="game({gameName: game.name})">
       {{game.name}}
       <span ng-if="game.teamOne.score">

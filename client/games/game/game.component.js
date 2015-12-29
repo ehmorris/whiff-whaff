@@ -14,8 +14,6 @@ angular.module('whiffWhaff').directive('game', function() {
 
       this.addScore = function(amount, team) {
         if (!this.game.teamOne) {
-          this.game = Games.findOne({name: this.game.name});
-
           Games.update({ _id: this.game._id }, {
             $set: {
               teamOne: {score: 0},
@@ -24,13 +22,10 @@ angular.module('whiffWhaff').directive('game', function() {
           });
         }
 
-        var new_score = this.game[team].score + amount;
         var update_object = {};
-        update_object[team] = {score: new_score};
+        update_object[team] = {score: this.game[team].score + amount};
 
-        Games.update({ _id: this.game._id }, {
-          $set: update_object
-        });
+        Games.update({ _id: this.game._id }, { $set: update_object });
       };
     }
   };
