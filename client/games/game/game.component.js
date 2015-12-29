@@ -13,15 +13,6 @@ angular.module('whiffWhaff').directive('game', function() {
       });
 
       this.addScore = function(amount, team) {
-        if (!this.game.teamOne) {
-          Games.update({ _id: this.game._id }, {
-            $set: {
-              teamOne: {score: 0},
-              teamTwo: {score: 0}
-            }
-          });
-        }
-
         var update_object = {};
         update_object[team] = {score: this.game[team].score + amount};
 

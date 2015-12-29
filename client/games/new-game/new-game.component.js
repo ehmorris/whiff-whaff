@@ -16,9 +16,14 @@ angular.module('whiffWhaff').directive('newGame', function() {
         }
       });
 
+      var defaultGame = {
+        teamOne: {score: 0},
+        teamTwo: {score: 0}
+      };
+
       this.addGame = function(newGame) {
         newGame.name = dasherize(newGame.name);
-        Games.insert(newGame);
+        Games.insert(angular.extend(newGame, defaultGame));
         $state.go('game', {gameName: newGame.name});
       };
     }
