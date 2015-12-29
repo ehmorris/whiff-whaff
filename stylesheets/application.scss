@@ -1,0 +1,41 @@
+@import "bourbon/bourbon";
+
+body {
+  font: 700 1rem/1.4 'Montserrat', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.game {
+  @include user-select(none);
+}
+
+@mixin flex_center() {
+  @include align-items(center);
+  @include display(flex);
+  @include justify-content(center);
+  width: 100%;
+}
+
+.game-title {
+  @include flex_center();
+  background: rgba(0, 0, 0, .5);
+  color: #fff;
+  font-size: 2rem;
+  height: 100vh;
+  position: absolute;
+  text-align: center;
+}
+
+.game-score {
+  @include flex_center();
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 35vh;
+  height: 50vh;
+  padding: 1rem;
+}
+
+.game-score--flipped {
+  @include transform(rotate(180deg));
+}

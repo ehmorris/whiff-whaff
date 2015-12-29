@@ -1,9 +1,13 @@
-<p>
-  {{gameCtrl.game.name}}
-  <span ng-if="gameCtrl.game.teamOne.score">
-    ({{gameCtrl.game.teamOne.score}}, {{gameCtrl.game.teamTwo.score}})
-  </span>
-</p>
+<div class="game">
+  <div class="game-title" ng-hide="gameCtrl.hide_intro" ng-click="gameCtrl.hide_intro = true">
+    <span>{{gameCtrl.game.name}}</span>
+  </div>
 
-<button ng-click="gameCtrl.addScore(1, 'teamOne')">+1 team one</button>
-<button ng-click="gameCtrl.addScore(1, 'teamTwo')">+1 team two</button>
+  <div class="game-score game-score--flipped" ng-click="gameCtrl.addScore(1, 'teamOne')">
+    {{gameCtrl.game.teamOne.score}}
+  </div>
+
+  <div class="game-score" ng-click="gameCtrl.addScore(1, 'teamTwo')">
+    {{gameCtrl.game.teamTwo.score}}
+  </div>
+</div>
