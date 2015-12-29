@@ -1,4 +1,4 @@
-<div class="game">
+<div class="game" ng-cloak>
   <div class="game-title" ng-hide="gameCtrl.hideIntro" ng-click="gameCtrl.hideIntro = true">
     <div>{{gameCtrl.game.name}}</div>
     <a class="game-title-smsLink" ng-click="$event.stopPropagation();" ng-href="sms://&body=:Game url:\n{{gameCtrl.gameUrl}}">text url to player 2</a>
