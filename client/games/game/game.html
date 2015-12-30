@@ -1,8 +1,8 @@
 <div class="game" ng-cloak>
   <div class="game-title" ng-hide="gameCtrl.hideIntro" ng-click="gameCtrl.hideIntro = true">
     <div>{{gameCtrl.game.name}}</div>
-    <a class="game-title-smsLink" ng-click="$event.stopPropagation();" ng-href="sms://&body=Game url: {{gameCtrl.gameUrl}}">text url to player 2</a>
-    <div class="game-title-small">tap anywhere to begin</div>
+    <a class="game-title-smsLink" ng-click="$event.stopPropagation();" ng-href="sms://&body=Game url: {{gameCtrl.urlPath + gameCtrl.game.name}}">text url to player 2</a>
+    <div class="game-title-small">tap anywhere to enter game</div>
   </div>
 
   <div class="game-score game-score--flipped game-score--blue" ng-touchstart="gameCtrl.addScore(1, 'teamOne')">

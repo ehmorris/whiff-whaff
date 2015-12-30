@@ -12,13 +12,9 @@ angular.module('whiffWhaff').directive('game', function() {
         }
       });
 
-      this.gameUrl = window.location.origin + '/game/' + this.game.name;
-      this.beep_on = ngAudio.load('/beep_on.ogg');
-      this.beep_off = ngAudio.load('/beep_off.ogg');
-
-      if (this.game.teamOne.score > 0 || this.game.teamTwo.score > 0) {
-        this.hideIntro = true;
-      }
+      this.urlPath = window.location.origin + '/game/';
+      this.beep_on = ngAudio.load('/beep_on.mp3');
+      this.beep_off = ngAudio.load('/beep_off.mp3');
 
       this.addScore = function(amount, team) {
         var update_object = {};
