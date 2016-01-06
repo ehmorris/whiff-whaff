@@ -1,1 +1,1 @@
-angular.module('whiffWhaff', ['angular-meteor', 'ui.router', 'ngAudio']);
+angular.module('whiffWhaff', ['angular-meteor', 'ui.router', 'ngAudio', 'hmTouchEvents']);

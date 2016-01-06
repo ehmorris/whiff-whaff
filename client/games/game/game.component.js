@@ -25,6 +25,13 @@ angular.module('whiffWhaff').directive('game', function() {
         if (team === 'teamOne') this.beep_on.play();
         if (team === 'teamTwo') this.beep_off.play();
       };
+
+      this.removeScore = function(amount, team) {
+        var update_object = {};
+        update_object[team] = {score: this.game[team].score - amount};
+
+        Games.update({ _id: this.game._id }, { $set: update_object });
+      };
     }
   };
 });

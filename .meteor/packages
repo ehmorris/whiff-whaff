@@ -19,3 +19,4 @@ angular
 angularui:angular-ui-router
 fourseven:scss
 fastclick
+guihash:angular-hammer
