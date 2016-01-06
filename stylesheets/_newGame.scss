@@ -2,6 +2,7 @@
 
 .newGame {
   @include flex-center();
+  @include flex-direction(column);
   height: 100vh;
 }
 
@@ -9,11 +10,17 @@
   border: none;
   font-size: 1rem;
   font-size: 7vw;
-  padding: 1em 0;
+  padding: 1rem 0;
   text-align: center;
   width: 100vw;
 
   &:focus {
     outline: none;
   }
+}
+
+.newGame-hint {
+  color: #666;
+  font-weight: 400;
+  text-align: center;
 }
