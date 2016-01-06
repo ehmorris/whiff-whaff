@@ -5,11 +5,11 @@
     <div class="game-title-small">tap anywhere to enter game</div>
   </div>
 
-  <div class="game-score game-score--flipped game-score--blue" hm-tap="gameCtrl.addScore(1, 'teamOne')" hm-pinch-out="gameCtrl.removeScore(1, 'teamOne')">
+  <div class="game-score game-score--flipped game-score--blue" hm-tap="gameCtrl.addScore(1, 'teamOne')" hm-swipe-left="gameCtrl.removeScore(1, 'teamOne')">
     {{gameCtrl.game.teamOne.score}}
   </div>
 
-  <div class="game-score game-score--red" hm-tap="gameCtrl.addScore(1, 'teamTwo')" hm-pinch-out="gameCtrl.removeScore(1, 'teamTwo')">
+  <div class="game-score game-score--red" hm-tap="gameCtrl.addScore(1, 'teamTwo')" hm-swipe-left="gameCtrl.removeScore(1, 'teamTwo')">
     {{gameCtrl.game.teamTwo.score}}
   </div>
 </div>
